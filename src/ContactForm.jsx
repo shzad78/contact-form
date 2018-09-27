@@ -14,7 +14,19 @@ class ContactForm extends Component {
     }
     handleSubmit=(e)=>{
         e.preventDefault();
-        console.log({submitedvalue:this.state})
+        
+
+        axios.get('http://localhost:3001/posts',{
+            
+        }).then(
+            (response)=>{
+                alert(response)
+            }
+        ).catch(
+            (error)=>{
+                console.log(error.response);
+            }
+        )
     }
     render(){
         return(
