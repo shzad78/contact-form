@@ -11,11 +11,14 @@ class ContactForm extends Component {
             [e.target.name]: e.target.value
         })
     }
-
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        console.log({submitedvalue:this.state})
+    }
     render(){
         return(
             <div>
-                <form action="">
+                <form onSubmit={this.handleSubmit}>
                 <label htmlFor="">Name</label>
                 <input type="text" name='name' value={this.state.name} onChange= {this.handleChange}/>
                 <br/><br/>
